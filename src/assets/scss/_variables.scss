@@ -1,0 +1,25 @@
+//root
+$font-size-root: 16px;
+
+$radius-message-bubble: 1rem;
+
+//bot-bubble
+$color-bot-bubble: blue;
+
+$positon-top-bot-bubble: 0;
+$positon-bottom-bot-bubble: 2em;
+$positon-right-bot-bubble: 2em;
+$positon-left-bot-bubble: 0;
+
+$radius-bot-bubble: 50%;
+
+$width-bot-bubble: 3em;
+$height-bot-bubble: 3em;
+
+//board
+$positon-top-board: $positon-top-bot-bubble + $height-bot-bubble;
+$positon-bottom-board: $positon-bottom-bot-bubble + $height-bot-bubble;
+$positon-right-board: $positon-right-bot-bubble + $width-bot-bubble;
+$positon-left-board: $positon-left-bot-bubble + $width-bot-bubble;
+
+$radius-board: 1em;

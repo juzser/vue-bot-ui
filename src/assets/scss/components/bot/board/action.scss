@@ -1,0 +1,24 @@
+.qkb-board-action {
+    display: flex;
+    height: 10%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.qkb-board-action__input {
+    // width:  ;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 1em;
+    height: 2rem;
+    flex-grow: 1;
+    margin-right: 0.5em;
+}
+
+.qkb-board-action__btn-send {
+    border: 1px solid black;
+    height: 2rem;
+    outline: none;
+    border-radius: 1em;
+    padding: 0.3em 1.5em;
+}

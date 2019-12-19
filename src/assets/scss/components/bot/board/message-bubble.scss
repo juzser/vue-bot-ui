@@ -1,0 +1,19 @@
+.qkb-board-message-bubble {
+    position: relative;
+}
+
+.qkb-board-message-bubble__avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 2em;
+    height: 2em;
+}
+
+.qkb-board-message-bubble__message {
+    position: relative;
+    left: 1em;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: $radius-message-bubble;
+    padding: 0.3em 0.5em;
+}

@@ -1,0 +1,16 @@
+@import './action.scss';
+@import './header.scss';
+@import './content.scss';
+@import './message-bubble.scss';
+
+
+.qkb-board {
+    padding: 0.5em;
+    position: fixed;
+    border-radius: $radius-board;
+    border: 1px solid black;
+    right: $positon-right-board;
+    bottom: $positon-bottom-board;
+    width: 25vw;
+    height: 75vh;
+}

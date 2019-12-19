@@ -1,0 +1,17 @@
+.qkb-board-header {
+    display: flex;
+    height: 10%;
+}
+
+.qkb-board-header__title {
+    flex-grow: 1;
+    align-self: center;
+}
+
+.qkb-board-header__btn-close {
+    // border: 1px solid black;
+    // border-radius: 50%;
+    background-color: white;
+    border: none;
+    outline: none;
+}

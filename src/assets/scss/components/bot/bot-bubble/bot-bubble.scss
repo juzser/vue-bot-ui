@@ -1,0 +1,10 @@
+.qkb-bot-bubble {
+    border-radius: $radius-bot-bubble;
+    outline: none;
+    position: fixed;
+    bottom: $positon-bottom-bot-bubble;
+    right: $positon-right-bot-bubble;
+    width: $width-bot-bubble;
+    height: $height-bot-bubble;
+    background-color: $color-bot-bubble;
+}
