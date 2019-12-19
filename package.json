@@ -1,0 +1,57 @@
+{
+  "name": "vue-bot-ui",
+  "version": "0.1.0",
+  "description": "Chatbot UI using Vue.js 2",
+  "author": {
+    "name": "SonNH",
+    "email": "sonnh@ownego.com"
+  },
+  "main": "dist/vue-bot-ui.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "package.json"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "BUILD_TYPE=modular vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name vue-bot-ui ./src/vue-bot-ui.js",
+    "lint": "vue-cli-service lint"
+  },
+  "keywords": [
+    "chatbot",
+    "bot ui",
+    "vue-bot-ui"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
+    "@types/jest": "^24.0.11",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-unit-jest": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.3",
+    "bootstrap": "^4.3.1",
+    "core-js": "^3.3.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JuzSer/vue-bot-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JuzSer/vue-bot-ui/issues"
+  },
+  "homepage": "https://github.com/JuzSer/vue-bot-ui#readme",
+  "license": "MIT"
+}
