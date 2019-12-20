@@ -1,22 +1,26 @@
 <template>
   <div class="qkb-board-content">
-    <message-bubble :message="message"></message-bubble>
+    <template v-if="listMessageBubble.length">
+      <message-bubble v-for="(message, i) in listMessageBubble" :key="i" :message="message"></message-bubble>
+    </template>
   </div>
 </template>
 
 <script>
 import MessageBubble from './MessageBubble'
+import { mapState } from 'vuex'
 export default {
   components: {
     MessageBubble
   },
   data () {
     return {
-      message: {
-        text: 'Hello',
-        avatar: 'https://www.w3schools.com/css/paris.jpg'
-      }
     }
+  },
+  computed: {
+    ...mapState([
+      'listMessageBubble'
+    ])
   }
 }
 </script>
