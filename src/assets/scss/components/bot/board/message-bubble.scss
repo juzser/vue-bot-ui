@@ -1,5 +1,9 @@
 .qkb-board-message-bubble {
-    position: relative;
+    display: flex;    
+}
+
+.qkb-board-message-bubble--right {
+    justify-content: flex-end;
 }
 
 .qkb-board-message-bubble__avatar {
@@ -9,11 +13,14 @@
     height: 2em;
 }
 
-.qkb-board-message-bubble__message {
-    position: relative;
-    left: 1em;
-    width: 60%;
+.qkb-board-message-bubble__text {
+    width: fit-content;
     border: 1px solid black;
     border-radius: $radius-message-bubble;
     padding: 0.3em 0.5em;
+}
+
+.qkb-board-message-bubble__btn {
+    background-color: grey;
+    color: white;
 }
