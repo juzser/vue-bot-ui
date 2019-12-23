@@ -4,4 +4,15 @@
 
 @import 'variables';
 
+//board
+@import './action.scss';
+@import './header.scss';
+@import './content.scss';
+@import './message-bubble.scss';
+@import './board/board.scss';
+
+//bot-bubble
+@import './bot-bubble/bot-bubble.scss';
+
 @import './components/bot/bot-ui.scss';
+
