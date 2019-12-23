@@ -2,7 +2,7 @@ export const fakeMessage = [
   {
     'type': 'text',
     'text': 'Hello. Have a nice day!',
-    'disableInput': true
+    'disableInput': false
   },
   {
     'type': 'button',
@@ -46,7 +46,7 @@ export const fakeMessage = [
         'action': 'postback'
       }
     ],
-    'disableInput': true
+    'disableInput': false
   },
   {
     'type': 'text',
@@ -63,6 +63,6 @@ export const fakeMessage = [
         'action': 'url'
       }
     ],
-    'disableInput': true
+    'disableInput': false
   }
 ]
