@@ -20,7 +20,6 @@ function createMessage (messageText) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       let randomNumber = Math.floor(Math.random() * fakeMessage.length)
-      console.log(randomNumber)
       resolve(fakeMessage[randomNumber])
     }, 1000)
   })
