@@ -1,9 +1,10 @@
 .qkb-board-message-bubble {
     display: flex;    
+    flex-direction: column;
 }
 
 .qkb-board-message-bubble--right {
-    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .qkb-board-message-bubble__avatar {
@@ -14,7 +15,8 @@
 }
 
 .qkb-board-message-bubble__text {
-    width: fit-content;
+    max-width: 60%;
+    word-wrap: break-word;
     border: 1px solid black;
     border-radius: $radius-message-bubble;
     padding: 0.3em 0.5em;
