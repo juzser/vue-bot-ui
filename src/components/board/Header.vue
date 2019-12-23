@@ -1,10 +1,16 @@
-<template>
-  <div class="qkb-board-header">
-    <span class="qkb-board-header__title">Chat bot box</span>
-    <button class="qkb-board-header__btn-close">X</button>
-  </div>
+<template lang="pug">
+  .qkb-board-header
+    span.qkb-board-header__title Chat bot box
+    button.qkb-board-header__btn-close(@click='closeBot') X
 </template>
 
 <script>
-export default {}
+import { mapActions } from 'vuex'
+export default {
+  methods: {
+    ...mapActions([
+      'closeBot'
+    ])
+  }
+}
 </script>

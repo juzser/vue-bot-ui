@@ -1,24 +1,28 @@
-<template>
-  <div class="qkb-board-message-bubble" :class="{ 'qkb-board-message-bubble--right': isCustomer}">
-    <img
-      v-if="message.avatar"
-      :src="message.avatar"
-      alt="msg-avatar"
-      class="qkb-board-message-bubble__avatar"
-    />
-    <div v-if="isCustomer">
-      <div class="qkb-board-message-bubble__text">{{ message.text }}</div>
-    </div>
-    <div v-else>
-      <div class="qkb-board-message-bubble__text">{{ message.text }}</div>
-      <template v-if="message.data">
-        <div v-for="(child, i) in message.data" :key="i">
-          <button class="qkb-board-message-bubble__btn" v-if="child.action === 'postback'" @click="postBack(child.value)">{{ child.title }}</button>
-          <a class="qkb-board-message-bubble__url" target="_blank" v-if="child.action === 'url'" :href="child.value">{{ child.title }}</a>
-        </div>
-      </template>
-    </div>
-  </div>
+<template lang="pug">
+  .qkb-board-message-bubble(:class="{ 'qkb-board-message-bubble--right': isCustomer}")
+    img.qkb-board-message-bubble__avatar(
+      v-if='message.avatar',
+      :src='message.avatar',
+      alt='msg-avatar'
+    )
+    template(v-if='isCustomer')
+      .qkb-board-message-bubble__text {{ message.text }}
+    template(v-else='')
+      .qkb-board-message-bubble__text {{ message.text }}
+      template(v-if='message.data')
+        div(
+          v-for='(child, i) in message.data',
+          :key='i'
+        )
+          button.qkb-board-message-bubble__btn(
+            v-if="child.action === 'postback'",
+            @click='postBack(child.value)'
+          ) {{ child.title }}
+          a.qkb-board-message-bubble__url(
+            target='_blank',
+            v-if="child.action === 'url'",
+            :href='child.value'
+          ) {{ child.title }}
 </template>
 
 <script>

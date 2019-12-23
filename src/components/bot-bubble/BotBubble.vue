@@ -1,7 +1,14 @@
-<template>
-  <div class="qkb-bot-bubble"></div>
+<template lang="pug">
+  .qkb-bot-bubble(@click='openBot')
 </template>
 
 <script>
-export default {}
+import { mapActions } from 'vuex'
+export default {
+  methods: {
+    ...mapActions([
+      'openBot'
+    ])
+  }
+}
 </script>

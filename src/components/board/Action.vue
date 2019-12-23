@@ -1,19 +1,17 @@
-<template>
-  <div class="qkb-board-action">
-    <input
-      class="qkb-board-action__input"
-      type="text"
-      v-model="messageText"
-      @keydown.enter="sendMessage"
-      :disabled="disableInput"
-    />
-    <button class="qkb-board-action__btn-send" @click="sendMessage">SEND</button>
-  </div>
+<template lang="pug">
+  .qkb-board-action
+    input.qkb-board-action__input(
+      type='text',
+      v-model='messageText',
+      @keydown.enter='sendMessage',
+      :disabled='disableInput'
+    )
+    button.qkb-board-action__btn-send(@click='sendMessage') SEND
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import { messageService } from '../../_service'
+import { messageService } from '../../_services'
 
 export default {
   data () {

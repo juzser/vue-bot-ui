@@ -1,9 +1,12 @@
-<template>
-  <div class="qkb-board-content">
-    <template v-if="listMessageBubble.length">
-      <message-bubble v-for="(message, i) in listMessageBubble" :key="i" :message="message"></message-bubble>
-    </template>
-  </div>
+<template lang="pug">
+  .qkb-board-content
+    template(v-if='listMessageBubble.length')
+      message-bubble(
+        v-for='(message, i) in listMessageBubble',
+        :key='i',
+        :message='message'
+      )
+
 </template>
 
 <script>
