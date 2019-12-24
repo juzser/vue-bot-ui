@@ -12,14 +12,12 @@
 
 <script>
 import MessageBubble from './MessageBubble'
-import ScrollBar from './ScrollBar'
 
 import { mapState } from 'vuex'
 
 export default {
   components: {
-    MessageBubble,
-    ScrollBar
+    MessageBubble
   },
   data () {
     return {
