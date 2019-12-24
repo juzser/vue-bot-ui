@@ -6,7 +6,7 @@
     "name": "SonNH",
     "email": "sonnh@ownego.com"
   },
-  "main": "dist/vue-bot-ui.js",
+  "main": "dist/vue-bot-ui.common.js",
   "files": [
     "dist/*",
     "src/*",
