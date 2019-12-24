@@ -5,9 +5,9 @@
       :src='message.avatar',
       alt='msg-avatar'
     )
-    template(v-if='isCustomer')
+    div.qkb-board-message-bubble-data(v-if='isCustomer')
       .qkb-board-message-bubble__text {{ message.text }}
-    template(v-else='')
+    div.qkb-board-message-bubble-data(v-else='')
       .qkb-board-message-bubble__text {{ message.text }}
       template(v-if='message.data')
         div(
