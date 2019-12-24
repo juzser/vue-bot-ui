@@ -1,10 +1,14 @@
 .qkb-board-message-bubble {
     display: flex;    
-    flex-direction: column;
+    // flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5em 0;
+    
 }
 
 .qkb-board-message-bubble--right {
-    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: end;
 }
 
 .qkb-board-message-bubble__avatar {
@@ -12,17 +16,37 @@
     object-fit: cover;
     width: 2em;
     height: 2em;
+    margin: 0.2em;
+}
+.qkb-board-message-bubble-data {
+    max-width: 60%;
 }
 
 .qkb-board-message-bubble__text {
-    max-width: 60%;
     word-wrap: break-word;
-    border: 1px solid black;
-    border-radius: $radius-message-bubble;
+    border-radius: $message-bubble-radius;
     padding: 0.3em 0.5em;
+    background-color: $message-bubble-text-bg-color;
+    color: $message-bubble-text-color;
 }
 
 .qkb-board-message-bubble__btn {
-    background-color: grey;
+    background-color: $message-bubble-btn-bg-color;
     color: white;
+    padding: 0.3em 0.5em;
+    border-radius: $message-bubble-radius;
+    border: hidden;
+    margin-top: 0.3em;
+}
+
+.qkb-board-message-bubble__select {
+    // display: flex;
+    // justify-content: center;
+    margin: 0.1em;
+    text-align: justify;
+}
+
+.qkb-board-message-bubble__url {
+    margin-top: 0.3em;
+    display: block;
 }

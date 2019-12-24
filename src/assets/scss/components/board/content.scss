@@ -1,6 +1,8 @@
 .qkb-board-content {
-    height: 80%;
-    overflow-y: scroll;
+    flex-grow: 1;
+    flex-basis: 0;
+    overflow-y: auto;
+    padding: 0.5em;
 
     &::-webkit-scrollbar {
         width: 6px;

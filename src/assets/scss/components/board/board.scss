@@ -1,10 +1,15 @@
 .qkb-board {
-    padding: 0.5em;
     position: fixed;
-    border-radius: $radius-board;
-    border: 1px solid black;
+    border-radius: $board-radius;
     right: $positon-right-board;
     bottom: $positon-bottom-board;
     width: 25vw;
     height: 75vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 35px 0px grey;
+
+    * {
+        box-sizing: border-box;
+    }
 }

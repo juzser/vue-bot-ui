@@ -1,6 +1,11 @@
 .qkb-board-header {
     display: flex;
-    height: 10%;
+    height: 40px;
+    background-color: $board-header-bg-color;
+    color: $board-header-color;
+    border-radius: $board-radius $board-radius 0 0;
+    padding: 0 0.5em;
+    flex: 0 0 auto;
 }
 
 .qkb-board-header__title {
@@ -9,9 +14,9 @@
 }
 
 .qkb-board-header__btn-close {
-    // border: 1px solid black;
-    // border-radius: 50%;
-    background-color: white;
-    border: none;
+    background-color: $board-header-btn-bg-color;
+    color: $board-header-btn-color;
     outline: none;
+    border-radius: 0 1em 0 0;
+    border: hidden;
 }
