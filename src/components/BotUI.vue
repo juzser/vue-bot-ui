@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import EventBus from '@/helpers/event-bus'
 import BoardHeader from './Board/Header'
 import BoardContent from './Board/Content'
 import BoardAction from './Board/Action'
@@ -47,6 +48,14 @@ export default {
       botActive: false,
       messageData: []
     }
+  },
+
+  created () {
+    EventBus.$on('select-button-option', this.selectOption)
+  },
+
+  destroyed () {
+    EventBus.$off('select-button-option')
   },
 
   methods: {
@@ -79,6 +88,10 @@ export default {
         .catch((error) => {
           console.log(error)
         })
+    },
+
+    selectOption (e) {
+      console.log(e)
     }
   }
 }

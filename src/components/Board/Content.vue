@@ -27,15 +27,10 @@ export default {
 
   watch: {
     mainData: function (newVal, oldVal) {
-      console.log('watch')
       this.$nextTick(() => {
         this.updateScroll()
       })
     }
-  },
-
-  mounted () {
-    console.log('hello')
   },
 
   methods: {
