@@ -1,18 +1,25 @@
 <template lang="pug">
-  #app
-    img(
-      alt="Vue Bot UI",
-      src="./assets/logo.png"
-    )
-    VueBotUI
+#app
+  img(
+    alt="Vue Bot UI",
+    src="./assets/logo.png"
+  )
+  VueBotUI(
+    :options="botOptions"
+  )
 </template>
-
 <script>
-
 export default {
+  data () {
+    return {
+      botOptions: {
+        inputPlaceholder: 'Type here...',
+        botTitle: 'qikify Chatbot'
+      }
+    }
+  }
 }
 </script>
-
 <style lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
