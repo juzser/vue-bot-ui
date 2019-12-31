@@ -1,15 +1,13 @@
 <template lang="pug">
-.qkb-msg-bubble
-  img.qkb-msg-bubble__avatar(
-    v-if="message.avatar",
-    :src="message.avatar",
-    alt="avatar"
-  )
+.qkb-msg-bubble(:class="bubbleClass")
+  .qkb-msg-avatar(v-if="message.agent === 'bot'")
+    .qkb-msg-avatar__img &nbsp;
   component(
     v-if="componentType",
     :is="componentType",
     :main-data="message"
   )
+  .qkb-msg-bubble__time 2 mins ago
 </template>
 <script>
 import SingleText from './SingleText'
@@ -28,11 +26,15 @@ export default {
   },
 
   computed: {
+    bubbleClass () {
+      return this.message.agent === 'bot'
+        ? 'qkb-msg-bubble--bot'
+        : 'qkb-msg-bubble--user'
+    },
+
     // Define the message type and return the specific component
     componentType () {
       let type = ''
-
-      console.log(this.message)
 
       switch (this.message.type) {
         case 'button':
