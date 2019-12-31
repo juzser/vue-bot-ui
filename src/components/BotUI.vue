@@ -67,7 +67,7 @@ export default {
       messageData: [],
       defaultOptions: {
         inputPlaceholder: 'Message',
-        botTitle: 'qikify Chatbot',
+        botTitle: 'Chatbot',
         colorScheme: '#1b53d0',
         boardContentBg: '#fff',
         textColor: '#fff',
