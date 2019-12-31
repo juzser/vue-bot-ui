@@ -4,15 +4,13 @@
 
 @import 'variables';
 
-//board
-@import './components/board/action.scss';
-@import './components/board/header.scss';
-@import './components/board/content.scss';
-@import './components/board/message-bubble.scss';
-@import './components/board/board.scss';
+@import './common/main';
+@import './common/animation';
 
-//bot-bubble
-@import './components/bot-bubble/bot-bubble.scss';
+@import './components/bubble-btn';
+@import './components/board';
+@import './components/header';
+@import './components/content';
+@import './components/action';
 
-@import './components/bot/bot-ui.scss';
 

@@ -1,38 +1,28 @@
-//root
-$font-size-root: 16px;
+// Root
+$font-size-root: 1rem;
+$bot-zindex: 1000;
 
-//bot-bubble
-$color-bot-bubble: blue;
+$white: #fff;
 
-$positon-top-bot-bubble: 0;
-$positon-bottom-bot-bubble: 2em;
-$positon-right-bot-bubble: 2em;
-$positon-left-bot-bubble: 0;
+// Bubble Button
+$bubble-btn-color: $white;
 
-$radius-bot-bubble: 50%;
+// Board
+$board-bg: $white;
+$board-radius: 8px;
+$board-width: 376px;
 
-$width-bot-bubble: 3em;
-$height-bot-bubble: 3em;
+// Header
+$header-height: 50px;
 
-//board
-$positon-top-board: $positon-top-bot-bubble + $height-bot-bubble;
-$positon-bottom-board: $positon-bottom-bot-bubble + $height-bot-bubble;
-$positon-right-board: $positon-right-bot-bubble + $width-bot-bubble;
-$positon-left-board: $positon-left-bot-bubble + $width-bot-bubble;
+// Content, Message Bubble
+$avatar-size: 32px;
+$bubble-triangle-size: 10px;
+$bubble-time-bg: #222;
+$bubble-time-color: $white;
 
-$board-radius: 1em;
-
-$board-header-bg-color: #444A62;
-$board-header-color: white;
-$board-header-btn-bg-color: #444A62;
-$board-header-btn-color: white;
-
-$board-action-input-bg-color: #EDF1F4;
-$board-action-btn-bg-color: #EDF1F4;
-
-//message-bubble
-$message-bubble-text-bg-color: #6B8CFF;
-$message-bubble-text-color: white;
-$message-bubble-btn-bg-color: #29BB5C;
-
-$message-bubble-radius: 0.5rem;
+// Action
+$action-height: 46px;
+$action-line: #e6e6e6;
+$action-input-bg: $white;
+$action-icon-color: #666;
