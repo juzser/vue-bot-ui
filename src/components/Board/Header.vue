@@ -2,7 +2,6 @@
 .qkb-board-header
   slot(name="header")
     .qkb-board-header__title {{ botTitle }}
-    button.qkb-btn-close(@click="closeBot")
 </template>
 <script>
 export default {
@@ -10,12 +9,6 @@ export default {
     botTitle: {
       type: String,
       default: 'Chatbot'
-    }
-  },
-
-  methods: {
-    closeBot () {
-      this.$emit('close-bot')
     }
   }
 }
