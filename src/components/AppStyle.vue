@@ -13,6 +13,7 @@ export default {
       const {
         colorScheme,
         textColor,
+        boardContentBg,
         bubbleBtnSize,
         botAvatarImg,
         botAvatarSize,
@@ -42,6 +43,9 @@ export default {
 .qkb-board-header__title {
   color: ${textColor};
 }
+.qkb-board-content {
+  background-color: ${boardContentBg};
+}
 ${botAvatarImg
     ? `.qkb-msg-avatar {
       width: ${botAvatarSize}px;
@@ -64,7 +68,12 @@ ${botAvatarImg
   background-color: ${msgBubbleBgUser};
 }
 .qkb-mb-button-options__btn {
+  color: ${msgBubbleBgUser};
+  border-color: ${msgBubbleBgUser};
+}
+.qkb-mb-button-options__btn:hover {
   color: ${msgBubbleColorUser};
+  background-color: ${msgBubbleBgUser};
 }
 </style>
       `
