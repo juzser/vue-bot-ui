@@ -13,8 +13,7 @@ export default {
   data () {
     return {
       botOptions: {
-        inputPlaceholder: 'Type here...',
-        botTitle: 'qikify Chatbot'
+        inputPlaceholder: 'Type hereeee...'
       }
     }
   }
