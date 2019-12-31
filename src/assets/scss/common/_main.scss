@@ -1,0 +1,22 @@
+.qkb-bot-ui {
+  position: fixed;
+  z-index: $bot-zindex;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-root;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.qkb-preload-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}

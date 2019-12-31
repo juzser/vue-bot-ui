@@ -1,0 +1,13 @@
+.qkb-board {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  width: $board-width;
+  height: 80vh;
+  margin-bottom: 10px;
+  border-radius: $board-radius;
+  background-color: $board-bg;
+  box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .15);
+}

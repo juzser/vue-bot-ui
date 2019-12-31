@@ -1,0 +1,61 @@
+.qkb-board-action {
+  display: flex;
+  flex: none;
+  height: $action-height;
+  padding: 0.45rem 1.25rem 0.5rem;
+  border-top: 1px solid $action-line;
+}
+
+.qkb-board-action__wrapper {
+  display: flex;
+  width: 100%;
+  background-color: $action-input-bg;
+}
+
+.qkb-board-action__input {
+  flex-grow: 1;
+  height: 100%;
+  padding: 0 1rem 0 0;
+  font-size: 0.875rem;
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+  outline: 0;
+}
+
+.qkb-board-action__box {
+  display: flex;
+  flex: none;
+  justify-content: center;
+}
+
+.qkb-action-item {
+  display: block;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: .6;
+  transition: opacity linear .1s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.qkb-action-icon {
+  width: 16px;
+  height: 16px;
+  line-height: 1;
+  fill: $action-icon-color;
+  color: $action-icon-color;
+  vertical-align: middle;
+}
+
+.qkb-board-aciton--typing {
+  .qkb-action-item--send {
+    opacity: 1;
+  }
+}
