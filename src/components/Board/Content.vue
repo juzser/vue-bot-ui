@@ -1,12 +1,10 @@
 <template lang="pug">
-.qkb-board-content(
-  ref="boardContent"
-)
+.qkb-board-content(ref="boardContent")
   .qkb-board-content__bubbles(v-if="mainData.length")
     message-bubble(
       v-for="(item, index) in mainData",
       :key="index",
-      :message="item"
+      :message="item",
     )
 </template>
 
@@ -26,7 +24,7 @@ export default {
   },
 
   watch: {
-    mainData: function (newVal, oldVal) {
+    mainData: function (newVal) {
       this.$nextTick(() => {
         this.updateScroll()
       })
@@ -35,9 +33,10 @@ export default {
 
   methods: {
     updateScroll () {
-      const boardContent = this.$refs.boardContent
-      const currentHeight = boardContent.scrollHeight
-      this.$refs.boardContent.scrollBy(0, currentHeight)
+      const contentElm = this.$refs.boardContent
+      const offsetHeight = contentElm.offsetHeight
+
+      contentElm.scrollTop = offsetHeight
     }
   }
 }
