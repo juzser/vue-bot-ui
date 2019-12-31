@@ -2,17 +2,22 @@
 .qkb-board-action(
   :class="actionClass"
 )
-  input.qkb-board-action__input(
-    type="text",
-    v-model="messageText",
-    :disabled="disableInput",
-    :placeholder="inputPlaceholder",
-    @keydown.enter="sendMessage",
-  )
-  button.qkb-board-action__btn-send(@click="sendMessage")
-    slot(name="sendButton")
-      .qkb-send-icon
-        IconSend.qkb-send-icon--plane
+  .qkb-board-action__wrapper
+    input.qkb-board-action__input(
+      type="text",
+      v-model="messageText",
+      ref="qkbMessageInput",
+      :disabled="disableInput",
+      :placeholder="inputPlaceholder",
+      @keydown.enter="sendMessage",
+    )
+    .qkb-board-action__box
+      slot(name="actions")
+        button.qkb-action-item.qkb-action-item--emo
+
+      button.qkb-action-item.qkb-action-item--send(@click="sendMessage")
+        slot(name="sendButton")
+          IconSend.qkb-action-icon.qkb-action-icon--send
 </template>
 <script>
 import IconSend from '@/assets/icons/send.svg'
@@ -42,16 +47,27 @@ export default {
       if (this.disableInput) {
         actionClasses.push('qkb-board-action--disabled')
       }
+
+      if (this.messageText) {
+        actionClasses.push('qkb-board-aciton--typing')
+      }
+
       // TODO: sending
 
       return actionClasses
     }
   },
 
+  mounted () {
+    this.$refs.qkbMessageInput.focus()
+  },
+
   methods: {
     sendMessage () {
-      this.disableInput = true
-      this.$emit('msg-send', this.messageText)
+      if (this.messageText) {
+        this.$emit('msg-send', this.messageText)
+        this.messageText = null
+      }
     }
   }
 }
