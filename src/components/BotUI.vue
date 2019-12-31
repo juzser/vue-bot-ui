@@ -69,6 +69,7 @@ export default {
         inputPlaceholder: 'Message',
         botTitle: 'qikify Chatbot',
         colorScheme: '#1b53d0',
+        boardContentBg: '#fff',
         textColor: '#fff',
         bubbleBtnSize: 56,
         animation: true,
