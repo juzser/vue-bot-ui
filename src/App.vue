@@ -9,10 +9,19 @@
   )
 </template>
 <script>
+import BotIcon from '@/assets/icons/bot.png'
+
 export default {
+  components: {
+    BotIcon
+  },
+
   data () {
     return {
       botOptions: {
+        botAvatarImg: BotIcon,
+        boardContentBg: '#f4f4f4',
+        msgBubbleBgBot: '#fff',
         inputPlaceholder: 'Type hereeee...'
       }
     }
