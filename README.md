@@ -16,6 +16,9 @@ Demo page is coming soon.
 
 ```bash
 yarn add vue-bot-ui
+
+// or
+npm install vue-bot-ui
 ```
 
 ## Usage
@@ -76,14 +79,14 @@ Many things...
 Usage
 ```vue
 <template slot="header>
-...
+  ...
 </template>
 ```
 
-- *header* -- Board header, that contains Bot name. You can add icon or customize by this slot
-- *actions* -- The slot beside Send button in the board footer. You can add some actions here (emoji, attach,...)
-- *sendButton* -- The slot to customize Send button in the board footer.
-- *bubbleButton* -- Customize the Bubble button
+- **header** -- Board header, that contains Bot name. You can add icon or customize by this slot
+- **actions** -- The slot beside Send button in the board footer. You can add some actions here (emoji, attach,...)
+- **sendButton** -- The slot to customize Send button in the board footer.
+- **bubbleButton** -- Customize the Bubble button
 
 The more details for slots is coming soon.
 
@@ -108,8 +111,8 @@ yarn build-bundle
 ```
 
 ---
-The icons and images from [FlatIcon](https://www.flaticon.com/)
-Placeholder image from [Placehold.it](http://placehold.it)
+- The icons and images from [FlatIcon](https://www.flaticon.com/)
+- Placeholder image from [Placehold.it](http://placehold.it)
 
 
 **Thank you!** :tada:
