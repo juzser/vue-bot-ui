@@ -129,9 +129,6 @@ export default {
           this.disableInput = response.disableInput
           this.messageData.push(replyMessage)
         })
-        .catch((error) => {
-          console.log(error)
-        })
     },
 
     sendMessage (message) {
@@ -156,13 +153,10 @@ export default {
           this.disableInput = response.disableInput
           this.messageData.push(replyMessage)
         })
-        .catch((error) => {
-          console.log(error)
-        })
     },
 
     selectOption (e) {
-      console.log(e)
+      // console.log(e)
     }
   }
 }
