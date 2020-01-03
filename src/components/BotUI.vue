@@ -46,7 +46,8 @@ import BubbleIcon from '@/assets/icons/bubble.svg'
 import CloseIcon from '@/assets/icons/close.svg'
 
 export default {
-  name: 'VBotUI',
+  name: 'VueBotUI',
+
   components: {
     BoardHeader,
     BoardContent,
@@ -79,7 +80,7 @@ export default {
 
   data () {
     return {
-      botActive: true,
+      botActive: false,
       defaultOptions: {
         botTitle: 'Chatbot',
         colorScheme: '#1b53d0',

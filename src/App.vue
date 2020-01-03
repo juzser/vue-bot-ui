@@ -15,11 +15,13 @@
 </template>
 <script>
 import BotIcon from '@/assets/icons/bot.png'
+import { VueBotUI } from './vue-bot-ui'
 import { messageService } from '@/helpers/message'
 
 export default {
   components: {
-    BotIcon
+    BotIcon,
+    VueBotUI
   },
 
   data () {

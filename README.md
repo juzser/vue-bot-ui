@@ -23,15 +23,20 @@ yarn add vue-bot-ui
 
 ## Usage
 
-Include plugin in your `main.js` file.
+Import & register the component
 
 ```javascript
-import VueBotUI from 'vue-bot-ui'
+import { VueBotUI } from 'vue-bot-ui'
 
-Vue.use(VueBotUI)
+export default {
+  components: {
+    VueBotUI,
+  },
+  ...
+}
 ```
 
-Use it:
+And use it:
 
 ```vue
 <VueBotUI

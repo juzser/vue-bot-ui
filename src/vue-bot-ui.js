@@ -1,8 +1,8 @@
-import BotUI from '@/components/BotUI.vue'
+import VueBotUI from '@/components/BotUI.vue'
 
 const Plugin = {
   install (Vue, options) {
-    Vue.component('VueBotUI', BotUI)
+    Vue.component('VueBotUI', VueBotUI)
 
     if (options) {
       // console.log('options', options)
@@ -11,3 +11,4 @@ const Plugin = {
 }
 
 export default Plugin
+export { VueBotUI }
