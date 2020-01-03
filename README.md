@@ -108,11 +108,13 @@ const messages = [
     agent: 'user',
     type: 'text', // always
     text: 'I need a new laptop',
-  }
+  },
+  ...
 ]
 ```
 
 **Component List:**
+
 Current components supported by this package, path to files: `components/MessageBubble/..`
 
 - **SingleText** - `type: 'text'`
@@ -144,7 +146,8 @@ Current components supported by this package, path to files: `components/Message
       text: 'Submit Support Ticket',
       value: 'submit_ticket',
       action: 'postback' // Request to API
-    }
+    },
+    ...
   ],
 }
 ```
@@ -188,7 +191,7 @@ List of available slots:
 
 
 
-#### Not found what your need?
+### Not found what your need?
 You can overwrite the CSS by class name. Each type and state has separated class for you to customize.
 
 **Feature request**: Feel free to open an issue to ask for a new feature.
