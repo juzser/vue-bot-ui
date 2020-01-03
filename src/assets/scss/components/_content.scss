@@ -120,3 +120,39 @@
     z-index: 10;
   }
 }
+
+
+// Typing indicator
+.qkb-msg-bubble__typing-indicator {
+  position: relative;
+  min-width: $typing-indicator-size * 3 + 8px;
+  opacity: .3;
+
+  span {
+    display: block;
+    width: $typing-indicator-size;
+    height: $typing-indicator-size;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: $typing-indicator-size;
+    height: $typing-indicator-size;
+    border-radius: 50%;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}

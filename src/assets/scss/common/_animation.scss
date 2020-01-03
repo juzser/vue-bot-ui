@@ -27,3 +27,33 @@
     opacity: 0;
   }
 }
+
+
+// Typing indicator
+@keyframes qkbJump {
+  from {
+    transform: translateY(2px);
+  }
+  to {
+    transform: translateY(-1px);
+  }
+}
+
+$typing-duration: .35s;
+
+.qkb-msg-bubble__typing-indicator {
+  span,
+  &::before,
+  &::after {
+    transform: translateY(2px);
+    animation: qkbJump ease $typing-duration infinite alternate;
+  }
+
+  span {
+    animation-delay: $typing-duration / 2;
+  }
+
+  &::after {
+    animation-delay: $typing-duration;
+  }
+}

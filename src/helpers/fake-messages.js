@@ -1,4 +1,4 @@
-export const fakeMessage = [
+export const fakeMessages = [
   {
     'type': 'text',
     'text': 'Hello. Have a nice day!',
@@ -7,19 +7,19 @@ export const fakeMessage = [
   {
     'type': 'button',
     'text': 'How can we help you today?',
-    'data': [
+    'options': [
       {
-        'title': 'Search Suport Articles',
+        'text': 'Search Suport Articles',
         'value': 'search',
         'action': 'postback'
       },
       {
-        'title': 'Submit Support Ticket',
+        'text': 'Submit Support Ticket',
         'value': 'submit_ticket',
         'action': 'postback'
       }
     ],
-    'disableInput': false
+    'disableInput': true
   },
   {
     'type': 'text',
@@ -29,24 +29,24 @@ export const fakeMessage = [
   {
     'type': 'button',
     'text': 'Here are the results from our knowledgebase.',
-    'data': [
+    'options': [
       {
-        'title': 'How to create a menu',
+        'text': 'How to create a menu',
         'value': 'https://google.com',
         'action': 'url'
       },
       {
-        'title': 'How to add a submenu to a menu',
+        'text': 'How to add a submenu to a menu',
         'value': 'https://google.com',
         'action': 'url'
       },
       {
-        'title': "Not what I'm looking for",
+        'text': "Not what I'm looking for",
         'value': 'result_not_match',
         'action': 'postback'
       }
     ],
-    'disableInput': false
+    'disableInput': true
   },
   {
     'type': 'text',
@@ -56,9 +56,9 @@ export const fakeMessage = [
   {
     'type': 'button',
     'text': 'All done! Your support ticket is created.',
-    'data': [
+    'options': [
       {
-        'title': 'View ticket',
+        'text': 'View ticket',
         'value': 'https://google.com',
         'action': 'url'
       }

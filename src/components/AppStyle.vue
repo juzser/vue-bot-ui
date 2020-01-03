@@ -17,6 +17,7 @@ export default {
         bubbleBtnSize,
         botAvatarImg,
         botAvatarSize,
+        inputDisableBg,
         msgBubbleBgBot,
         msgBubbleColorBot,
         msgBubbleBgUser,
@@ -60,6 +61,11 @@ ${botAvatarImg
   color: ${msgBubbleColorBot};
   background-color: ${msgBubbleBgBot};
 }
+.qkb-msg-bubble__typing-indicator span,
+.qkb-msg-bubble__typing-indicator::before,
+.qkb-msg-bubble__typing-indicator::after {
+  background-color: ${msgBubbleColorBot};
+}
 .qkb-mb-button-options__btn::before {
   background-color: ${msgBubbleBgUser};
 }
@@ -74,6 +80,9 @@ ${botAvatarImg
 .qkb-mb-button-options__btn:hover {
   color: ${msgBubbleColorUser};
   background-color: ${msgBubbleBgUser};
+}
+.qkb-board-action--disabled::before {
+  background-color: ${inputDisableBg};
 }
 </style>
       `

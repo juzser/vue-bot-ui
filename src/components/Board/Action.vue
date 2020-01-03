@@ -3,18 +3,21 @@
   :class="actionClass"
 )
   .qkb-board-action__wrapper
-    input.qkb-board-action__input(
-      type="text",
-      v-model="messageText",
-      ref="qkbMessageInput",
-      :disabled="disableInput",
-      :placeholder="inputPlaceholder",
-      @keydown.enter="sendMessage",
-    )
-    .qkb-board-action__box
+    .qkb-board-action__msg-box
+      input.qkb-board-action__input(
+        type="text",
+        v-model="messageText",
+        ref="qkbMessageInput",
+        :disabled="inputDisable",
+        :placeholder="inputPlaceholder",
+        @keydown.enter="sendMessage",
+      )
+      .qkb-board-action__disable-text(
+        v-if="inputDisablePlaceholder && inputDisable"
+      )
+        span {{ inputDisablePlaceholder }}
+    .qkb-board-action__extra
       slot(name="actions")
-        button.qkb-action-item.qkb-action-item--emo
-
       button.qkb-action-item.qkb-action-item--send(@click="sendMessage")
         slot(name="sendButton")
           IconSend.qkb-action-icon.qkb-action-icon--send
@@ -30,13 +33,21 @@ export default {
   props: {
     inputPlaceholder: {
       type: String
+    },
+
+    inputDisablePlaceholder: {
+      type: String
+    },
+
+    inputDisable: {
+      type: Boolean,
+      default: false
     }
   },
 
   data () {
     return {
-      messageText: null,
-      disableInput: false
+      messageText: null
     }
   },
 
@@ -44,7 +55,7 @@ export default {
     actionClass () {
       const actionClasses = []
 
-      if (this.disableInput) {
+      if (this.inputDisable) {
         actionClasses.push('qkb-board-action--disabled')
       }
 
@@ -65,7 +76,7 @@ export default {
   methods: {
     sendMessage () {
       if (this.messageText) {
-        this.$emit('msg-send', this.messageText)
+        this.$emit('msg-send', { text: this.messageText })
         this.messageText = null
       }
     }

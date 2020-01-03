@@ -5,7 +5,7 @@ const Plugin = {
     Vue.component('VueBotUI', BotUI)
 
     if (options) {
-      console.log('options', options)
+      // console.log('options', options)
     }
   }
 }

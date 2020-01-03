@@ -9,10 +9,13 @@
         @close-bot="botToggle"
       )
       BoardContent(
-        :main-data="messageData"
+        :bot-typing="botTyping",
+        :main-data="messages"
       )
       BoardAction(
+        :input-disable="inputDisable",
         :input-placeholder="optionsMain.inputPlaceholder",
+        :input-disable-placeholder="optionsMain.inputDisablePlaceholder",
         @msg-send="sendMessage"
       )
   .qkb-bot-bubble
@@ -35,7 +38,6 @@
 </template>
 <script>
 import EventBus from '@/helpers/event-bus'
-import { messageService } from '@/services/'
 import BoardHeader from './Board/Header'
 import BoardContent from './Board/Content'
 import BoardAction from './Board/Action'
@@ -58,27 +60,42 @@ export default {
     options: {
       type: Object,
       default: () => { return {} }
+    },
+
+    messages: {
+      type: Array
+    },
+
+    botTyping: {
+      type: Boolean,
+      default: false
+    },
+
+    inputDisable: {
+      type: Boolean,
+      default: false
     }
   },
 
   data () {
     return {
       botActive: true,
-      messageData: [],
       defaultOptions: {
-        inputPlaceholder: 'Message',
         botTitle: 'Chatbot',
         colorScheme: '#1b53d0',
-        boardContentBg: '#fff',
         textColor: '#fff',
         bubbleBtnSize: 56,
         animation: true,
+        boardContentBg: '#fff',
         botAvatarSize: 32,
         botAvatarImg: 'http://placehold.it/200x200',
         msgBubbleBgBot: '#f0f0f0',
         msgBubbleColorBot: '#000',
         msgBubbleBgUser: '#4356e0',
-        msgBubbleColorUser: '#fff'
+        msgBubbleColorUser: '#fff',
+        inputPlaceholder: 'Message',
+        inputDisableBg: '#fff',
+        inputDisablePlaceholder: null
       }
     }
   },
@@ -104,7 +121,7 @@ export default {
     EventBus.$on('select-button-option', this.selectOption)
   },
 
-  destroyed () {
+  beforeDestroy () {
     EventBus.$off('select-button-option')
   },
 
@@ -113,50 +130,19 @@ export default {
       this.botActive = !this.botActive
 
       if (this.botActive) {
-        this.init()
+        this.$emit('init')
+      } else {
+        EventBus.$off('select-button-option')
+        this.$emit('destroy')
       }
     },
 
-    init () {
-      messageService.getMessage()
-        .then((response) => {
-          const replyMessage = {
-            agent: 'bot',
-            ...response,
-            avatar: 'https://placehold.it/200x200'
-          }
-
-          this.disableInput = response.disableInput
-          this.messageData.push(replyMessage)
-        })
+    sendMessage (value) {
+      this.$emit('msg-send', value)
     },
 
-    sendMessage (message) {
-      const messageObj = {
-        agent: 'customer',
-        type: 'text',
-        text: message
-      }
-
-      // Push to local data
-      this.messageData.push(messageObj)
-
-      // TODO: Request
-      messageService.createMessage(messageObj)
-        .then((response) => {
-          const replyMessage = {
-            agent: 'bot',
-            ...response,
-            avatar: 'https://placehold.it/200x200'
-          }
-
-          this.disableInput = response.disableInput
-          this.messageData.push(replyMessage)
-        })
-    },
-
-    selectOption (e) {
-      // console.log(e)
+    selectOption (value) {
+      this.$emit('msg-send', value)
     }
   }
 }

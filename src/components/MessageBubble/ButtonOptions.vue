@@ -3,21 +3,21 @@
   .qkb-msg-bubble-component__text {{ mainData.text }}
   .qkb-msg-bubble-component__options-wrapper
     .qkb-mb-button-options__item(
-      v-for="(item, index) in mainData.data",
+      v-for="(item, index) in mainData.options",
       :class="{ active: selectedItem === item.value }",
       :key="index"
     )
       button.qkb-mb-button-options__btn(
         v-if="item.action === 'postback'",
-        @click="selectOption(item.value)"
+        @click="selectOption(item)"
       )
-        span {{ item.title }}
+        span {{ item.text }}
       a.qkb-mb-button-options__btn.qkb-mb-button-options__url(
         target="_blank",
         v-else,
         :href="item.value"
       )
-        span {{ item.title }}
+        span {{ item.text }}
 </template>
 <script>
 import EventBus from '@/helpers/event-bus'
