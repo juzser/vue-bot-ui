@@ -16,8 +16,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest demo",
     "build-bundle": "vue-cli-service build --target lib --name vue-bot-ui ./src/vue-bot-ui.js",
-    "release": "standard-version && git push --follow-tags && npm publish",
-    "release:next": "standard-version --prerelease next && git push --follow-tags origin dev && npm publish --tag next",
+    "release": "git push --follow-tags && npm publish",
+    "release:next": "git push --follow-tags origin master && npm publish --tag next",
     "lint": "vue-cli-service lint --fix"
   },
   "keywords": [
@@ -35,6 +35,7 @@
     "@vue/cli-service": "^4.0.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "axios": "^0.19.0",
     "babel-eslint": "^10.0.3",
     "bootstrap": "^4.3.1",
     "core-js": "^3.3.2",
@@ -56,8 +57,5 @@
     "url": "https://github.com/JuzSer/vue-bot-ui/issues"
   },
   "homepage": "https://github.com/JuzSer/vue-bot-ui#readme",
-  "license": "MIT",
-  "dependencies": {
-    "vuex": "^3.1.2"
-  }
+  "license": "MIT"
 }
