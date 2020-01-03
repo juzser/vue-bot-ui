@@ -73,7 +73,7 @@ List of available options to customize UI:
 | `animation`           | Boolean  | true          | Set to `false` to disable animation of bubble button icon & board showing |
 | `boardContentBg`      | String   | '#fff'        | Background color of board messages box |
 | `botAvatarSize`       | Number   | 32            | Size of bot avatar |
-| `botAvatarImg`        | String   | 'http://placehold.it/200x200' | The size of bot avatar |
+| `botAvatarImg`        | String   | 'http://placehold.it/200x200' | Avatar image |
 | `msgBubbleBgBot`      | String   | '#f0f0f0'     | Background color of BOT message |
 | `msgBubbleColorBot`   | String   | '#000'        | Text color of BOT message |
 | `msgBubbleBgUser`     | String   | '#4356e0'     | Background color of user message |
