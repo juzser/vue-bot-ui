@@ -1,11 +1,11 @@
 
 # Vue Bot UI
 
-#### For the one who finding a customizable chatbot UI.
+#### For the one who is finding a customizable chatbot UI.
 
 I build for my private project, but I tried to bring as many options as I think someone need it, so feel free to use it.
 
-Demo page is coming soon.
+*Demo page is coming soon.*
 
 <p align="center">
 <img width="300" alt="vue bot UI" src="https://user-images.githubusercontent.com/5735071/71614782-52cc2280-2be0-11ea-8c1b-7af063401d3d.png">
@@ -15,10 +15,10 @@ Demo page is coming soon.
 ## Install
 
 ```bash
-yarn add vue-bot-ui
+npm install vue-bot-ui
 
 // or
-npm install vue-bot-ui
+yarn add vue-bot-ui
 ```
 
 ## Usage
@@ -34,65 +34,156 @@ Vue.use(VueBotUI)
 Use it:
 
 ```vue
-<VueBotUI :options="botOptions"/>
+<VueBotUI
+  :messages="data"
+  :options="botOptions"
+/>
 ```
 
 ```javascript
 data () {
   return {
     botOptions: {
-      // Options here
+      // See the list of options below
     }
   }
 }
 ```
 
-## TODO
-Many things...
-- API services (I'm going to use `axios`)
-- Loading / Typing indicators
-- Disable message input on loading, vice versa...
-- Validate option type
+## Props
+List of available props to use in the component:
+
+| Name               | Type       | Default         | Description |
+| ---                | ---        | ---             | ---         |
+| `messages`         | Array      | []              | **Required**. Data of Messages |
+| `options`          | Object     | see below       | Some options to customize UI |
+| `bot-typing`        | Boolean    | false           | If `true`, the bot typing indicator will show  |
+| `input-disable`     | Boolean    | false           | If `true`, message input will be disabled |
 
 
 ## Options
+List of available options to customize UI:
 
-| Name                | Type     | Default       | Description |
-| ---                 | ---      | ---           | ---         |
-| inputPlaceholder    | String   | 'Message'     | The placeholder for message input |
-| botTitle            | String   | 'Chatbot'     | Name of the bot that will be shown on header of the board |
-| colorScheme         | String   | '#1b53d0'     | The background color of bubble button & board header |
-| textColor           | String   | '#fff'        | The color of bubble button icon & board header title |
-| bubbleBtnSize       | Number   | 56            | The size of bubble button |
-| animation           | Boolean  | true          | Set to `false` to disable animation of bubble button icon & board showing |
-| boardContentBg      | String   | '#fff'        | The background color of board messages box |
-| botAvatarSize       | Number   | 32            | The size of bot avatar |
-| botAvatarImg        | String   | 'http://placehold.it/200x200' | The size of bot avatar |
-| msgBubbleBgBot      | String   | '#f0f0f0'     | The background color of BOT message |
-| msgBubbleColorBot   | String   | '#000'        | The text color of BOT message |
-| msgBubbleBgUser     | String   | '#4356e0'     | The background color of user message |
-| msgBubbleColorUser  | String   | '#fff'        | The text color of user message |
+| Name                  | Type     | Default         | Description |
+| ---                   | ---      | ---             | ---         |
+| `botTitle`            | String   | 'Chatbot'     | The bot name that will be shown on header of the board |
+| `colorScheme`         | String   | '#1b53d0'     | Background color of bubble button & board header |
+| `textColor`           | String   | '#fff'        | Color of bubble button icon & board header title |
+| `bubbleBtnSize`       | Number   | 56            | Size of bubble button |
+| `animation`           | Boolean  | true          | Set to `false` to disable animation of bubble button icon & board showing |
+| `boardContentBg`      | String   | '#fff'        | Background color of board messages box |
+| `botAvatarSize`       | Number   | 32            | Size of bot avatar |
+| `botAvatarImg`        | String   | 'http://placehold.it/200x200' | The size of bot avatar |
+| `msgBubbleBgBot`      | String   | '#f0f0f0'     | Background color of BOT message |
+| `msgBubbleColorBot`   | String   | '#000'        | Text color of BOT message |
+| `msgBubbleBgUser`     | String   | '#4356e0'     | Background color of user message |
+| `msgBubbleColorUser`  | String   | '#fff'        | Text color of user message |
+| `inputPlaceholder`    | String   | 'Message'     | The placeholder for message input |
+| `inputDisableBg`      | String   | '#fff'        | Background color for the disabled input, mixed with opacity 0.2 |
+| `inputDisablePlaceholder` | String   | null        | Placeholder message for disabled input |
+
+
+## Data & Events
+This is the most important part you need to know, because you need these to integrate your bot API.
+Take a look my `App.vue` file if you need an example.
+
+#### Data
+**Common pattern** - Example data
+
+```javascript
+const messages = [
+  {
+    agent: 'bot', // Required. 'bot' or 'user'
+    type: 'text', // Required. Bubble message component type: 'text' / 'button'
+    text: 'Hello. How can I help you', // Required. The message
+    avatar: 'http://...', // Avatar
+    disableInput: false, // Disable message input or not
+    ...
+  },
+  {
+    agent: 'user',
+    type: 'text', // always
+    text: 'I need a new laptop',
+  }
+]
+```
+
+**Component List** `components/MessageBubble/..` - Current components supported by this package
+
+- **SingleText** component (`type: 'text'`)
+```javascript
+{
+  agent: 'bot',
+  type: 'text',
+  text: 'Hello. How can I help you',
+  avatar: 'http://...',
+  disableInput: false,
+}
+```
+
+- **ButtonOptions** component (`type: 'button'`)
+```javascript
+{
+  agent: 'bot',
+  type: 'button',
+  text: 'Select the option below',
+  avatar: 'http://...',
+  disableInput: true,
+  options: [
+    {
+      text: 'Open Google',
+      value: 'https://google.com',
+      action: 'url'
+    },
+    {
+      text: 'Submit Support Ticket',
+      value: 'submit_ticket',
+      action: 'postback' // Request to API
+    }
+  ],
+}
+```
+
+- Other components are coming soon...
+
+#### Events
+
+| Name            | Params          | Description |
+| ---             | ---             | ---         |
+| `init`          |                 | Fire everytime the board is opened |
+| `msg-send`      | value (Object)  | Fire when user hit Send or select an option |
+| `destroy `      |                 | Fire when board is closed |
 
 
 ## Slots
 
 Usage
 ```vue
-<template slot="header>
-  ...
-</template>
+<VueBotUI :messages="data">
+  <template slot="header">
+    ...
+  </template>
+</VueBotUI>
 ```
 
-- **header** -- Board header, that contains Bot name. You can add icon or customize by this slot
-- **actions** -- The slot beside Send button in the board footer. You can add some actions here (emoji, attach,...)
-- **sendButton** -- The slot to customize Send button in the board footer.
-- **bubbleButton** -- Customize the Bubble button
+List of available slots:
+
+| Name            | Description |
+| ---             | ---         |
+| `header`        | Board header, that contains Bot name. |
+| `actions`       | The slot beside Send button in the input message. You can add extra actions here (emoji, attach,...) |
+| `sendButton`    | Send button icon, you can change it to text. |
+| `bubbleButton`  | Bubble button that contains BubbleIcon & CloseIcon as default. |
+| `botTyping`     | Bot Typing message bubble that contains 3 dots indicator as default. |
+
 
 The more details for slots is coming soon.
 
 
-##### Not found what your need? Customize yourself:
+#### Not found what your need? Customize yourself:
 You can overwrite the CSS by class name. Each type and state has separated class for you to customize.
+
+**Feature request**: Feel free to open an issue to ask for a new feature.
 
 
 ## Developers / Build
@@ -106,11 +197,24 @@ yarn
 # Development & Demo - http://localhost:1901
 yarn serve
 
-# Build main library for client & SSR
+# Build main library
 yarn build-bundle
 ```
 
+## Todo:
+Many things...
+- ~~Events~~
+- ~~Loading / Typing indicators~~
+- ~~Disable message input on loading, vice versa...~~
+- Validate option type
+- Properties for `target` of button options
+- Add more message bubble components (video, images,...)
+- Add more events
+- Test
+- Accessibility
+
 ---
+
 - The icons and images from [FlatIcon](https://www.flaticon.com/)
 - Placeholder image from [Placehold.it](http://placehold.it)
 
