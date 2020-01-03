@@ -43,12 +43,14 @@ Use it:
 ```javascript
 data () {
   return {
+    data: [], // See Data example below
     botOptions: {
       // See the list of options below
     }
   }
 }
 ```
+
 
 ## Props
 List of available props to use in the component:
@@ -59,6 +61,7 @@ List of available props to use in the component:
 | `options`          | Object     | see below       | Some options to customize UI |
 | `bot-typing`        | Boolean    | false           | If `true`, the bot typing indicator will show  |
 | `input-disable`     | Boolean    | false           | If `true`, message input will be disabled |
+
 
 
 ## Options
@@ -74,21 +77,22 @@ List of available options to customize UI:
 | `boardContentBg`      | String   | '#fff'        | Background color of board messages box |
 | `botAvatarSize`       | Number   | 32            | Size of bot avatar |
 | `botAvatarImg`        | String   | 'http://placehold.it/200x200' | Avatar image |
-| `msgBubbleBgBot`      | String   | '#f0f0f0'     | Background color of BOT message |
-| `msgBubbleColorBot`   | String   | '#000'        | Text color of BOT message |
+| `msgBubbleBgBot`      | String   | '#f0f0f0'     | Background color of Bot message |
+| `msgBubbleColorBot`   | String   | '#000'        | Text color of Bot message |
 | `msgBubbleBgUser`     | String   | '#4356e0'     | Background color of user message |
 | `msgBubbleColorUser`  | String   | '#fff'        | Text color of user message |
 | `inputPlaceholder`    | String   | 'Message'     | The placeholder for message input |
-| `inputDisableBg`      | String   | '#fff'        | Background color for the disabled input, mixed with opacity 0.2 |
+| `inputDisableBg`      | String   | '#fff'        | Background color for the disabled input, mixed with `opacity: 0.2` |
 | `inputDisablePlaceholder` | String   | null        | Placeholder message for disabled input |
+
 
 
 ## Data & Events
 This is the most important part you need to know, because you need these to integrate your bot API.
 Take a look my `App.vue` file if you need an example.
 
-#### Data
-**Common pattern** - Example data
+### Data
+**Common pattern / Example data:**
 
 ```javascript
 const messages = [
@@ -108,9 +112,10 @@ const messages = [
 ]
 ```
 
-**Component List** `components/MessageBubble/..` - Current components supported by this package
+**Component List:**
+Current components supported by this package, path to files: `components/MessageBubble/..`
 
-- **SingleText** component (`type: 'text'`)
+- **SingleText** - `type: 'text'`
 ```javascript
 {
   agent: 'bot',
@@ -121,7 +126,7 @@ const messages = [
 }
 ```
 
-- **ButtonOptions** component (`type: 'button'`)
+- **ButtonOptions** - `type: 'button'`
 ```javascript
 {
   agent: 'bot',
@@ -146,7 +151,8 @@ const messages = [
 
 - Other components are coming soon...
 
-#### Events
+
+### Events
 
 | Name            | Params          | Description |
 | ---             | ---             | ---         |
@@ -154,10 +160,13 @@ const messages = [
 | `msg-send`      | value (Object)  | Fire when user hit Send or select an option |
 | `destroy `      |                 | Fire when board is closed |
 
+Use `msg-send` to get the message from user and trigger request to bot API.
+
 
 ## Slots
 
 Usage
+
 ```vue
 <VueBotUI :messages="data">
   <template slot="header">
@@ -165,6 +174,7 @@ Usage
   </template>
 </VueBotUI>
 ```
+
 
 List of available slots:
 
@@ -177,10 +187,8 @@ List of available slots:
 | `botTyping`     | Bot Typing message bubble that contains 3 dots indicator as default. |
 
 
-The more details for slots is coming soon.
 
-
-#### Not found what your need? Customize yourself:
+#### Not found what your need?
 You can overwrite the CSS by class name. Each type and state has separated class for you to customize.
 
 **Feature request**: Feel free to open an issue to ask for a new feature.
@@ -213,7 +221,7 @@ Many things...
 - Test
 - Accessibility
 
----
+## Thanks
 
 - The icons and images from [FlatIcon](https://www.flaticon.com/)
 - Placeholder image from [Placehold.it](http://placehold.it)
