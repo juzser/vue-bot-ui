@@ -7,7 +7,8 @@
     :is="componentType",
     :main-data="message"
   )
-  .qkb-msg-bubble__time 2 mins ago
+  .qkb-msg-bubble__time(v-if="message.createdAt")
+    | {{ message.createdAt }}
 </template>
 <script>
 import SingleText from './SingleText'
