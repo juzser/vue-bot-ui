@@ -16,8 +16,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest demo",
     "build-bundle": "vue-cli-service build --target lib --name vue-bot-ui ./src/vue-bot-ui.js",
-    "release": "git push --follow-tags && npm publish",
-    "release:next": "git push --follow-tags origin master && npm publish --tag next",
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "release:next": "standard-version --prerelease next && git push --follow-tags origin dev && npm publish --tag next",
     "lint": "vue-cli-service lint --fix"
   },
   "keywords": [
@@ -45,6 +45,7 @@
     "pug-plain-loader": "^1.0.0",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
+    "standard-version": "^7.0.1",
     "vue": "^2.6.10",
     "vue-svg-loader": "^0.15.0",
     "vue-template-compiler": "^2.6.10"
