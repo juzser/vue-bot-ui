@@ -81,8 +81,7 @@ export default {
         .then((response) => {
           const replyMessage = {
             agent: 'bot',
-            ...response,
-            avatar: 'https://placehold.it/200x200'
+            ...response
           }
 
           this.inputDisable = response.disableInput
