@@ -42,6 +42,7 @@ And use it:
 <VueBotUI
   :messages="data"
   :options="botOptions"
+  @msg-send="messageSendHandler"
 />
 ```
 
@@ -72,15 +73,15 @@ List of available props to use in the component:
 ## Options
 List of available options to customize UI:
 
-| Name                  | Type     | Default         | Description |
-| ---                   | ---      | ---             | ---         |
+| Name                  | Type     | Default       | Description |
+| ---                   | ---      | ---           | ---         |
 | `botTitle`            | String   | 'Chatbot'     | The bot name that will be shown on header of the board |
 | `colorScheme`         | String   | '#1b53d0'     | Background color of bubble button & board header |
 | `textColor`           | String   | '#fff'        | Color of bubble button icon & board header title |
-| `bubbleBtnSize`       | Number   | 56            | Size of bubble button |
+| `bubbleBtnSize`       | Number   | 56            | Size of bubble button (px) |
 | `animation`           | Boolean  | true          | Set to `false` to disable animation of bubble button icon & board showing |
 | `boardContentBg`      | String   | '#fff'        | Background color of board messages box |
-| `botAvatarSize`       | Number   | 32            | Size of bot avatar |
+| `botAvatarSize`       | Number   | 32            | Size of bot avatar (px) |
 | `botAvatarImg`        | String   | 'http://placehold.it/200x200' | Avatar image |
 | `msgBubbleBgBot`      | String   | '#f0f0f0'     | Background color of Bot message |
 | `msgBubbleColorBot`   | String   | '#000'        | Text color of Bot message |
@@ -92,11 +93,22 @@ List of available options to customize UI:
 
 
 
-## Data & Events
+## Components & Events
 This is the most important part you need to know, because you need these to integrate your bot API.
 Take a look my `App.vue` file if you need an example.
 
-### Data
+### Events
+
+| Name            | Params          | Description |
+| ---             | ---             | ---         |
+| `init`          |                 | Fire everytime the board is opened |
+| `msg-send`      | value (Object)  | Fire when user hit Send or select an option |
+| `destroy `      |                 | Fire when board is closed |
+
+Use `msg-send` to get the message from user and trigger request to bot API.
+
+### Components
+
 **Common pattern / Example data:**
 
 ```javascript
@@ -105,7 +117,6 @@ const messages = [
     agent: 'bot', // Required. 'bot' or 'user'
     type: 'text', // Required. Bubble message component type: 'text' / 'button'
     text: 'Hello. How can I help you', // Required. The message
-    avatar: 'http://...', // Avatar
     disableInput: false, // Disable message input or not
     ...
   },
@@ -118,7 +129,7 @@ const messages = [
 ]
 ```
 
-**Component List:**
+**Component list:**
 
 Current components supported by this package, path to files: `components/MessageBubble/..`
 
@@ -128,7 +139,6 @@ Current components supported by this package, path to files: `components/Message
   agent: 'bot',
   type: 'text',
   text: 'Hello. How can I help you',
-  avatar: 'http://...',
   disableInput: false,
 }
 ```
@@ -139,7 +149,6 @@ Current components supported by this package, path to files: `components/Message
   agent: 'bot',
   type: 'button',
   text: 'Select the option below',
-  avatar: 'http://...',
   disableInput: true,
   options: [
     {
@@ -160,30 +169,7 @@ Current components supported by this package, path to files: `components/Message
 - Other components are coming soon...
 
 
-### Events
-
-| Name            | Params          | Description |
-| ---             | ---             | ---         |
-| `init`          |                 | Fire everytime the board is opened |
-| `msg-send`      | value (Object)  | Fire when user hit Send or select an option |
-| `destroy `      |                 | Fire when board is closed |
-
-Use `msg-send` to get the message from user and trigger request to bot API.
-
-
 ## Slots
-
-Usage
-
-```vue
-<VueBotUI :messages="data">
-  <template slot="header">
-    ...
-  </template>
-</VueBotUI>
-```
-
-
 List of available slots:
 
 | Name            | Description |
@@ -197,7 +183,7 @@ List of available slots:
 
 
 ### Not found what your need?
-You can overwrite the CSS by class name. Each type and state has separated class for you to customize.
+You can overwrite the CSS by class name. Each type and state has separate class for you to customize.
 
 **Feature request**: Feel free to open an issue to ask for a new feature.
 
@@ -222,7 +208,6 @@ Many things...
 - ~~Events~~
 - ~~Loading / Typing indicators~~
 - ~~Disable message input on loading, vice versa...~~
-- Validate option type
 - Properties for `target` of button options
 - Add more message bubble components (video, images,...)
 - Add more events
@@ -233,6 +218,7 @@ Many things...
 
 - The icons and images from [FlatIcon](https://www.flaticon.com/)
 - Placeholder image from [Placehold.it](http://placehold.it)
+- Time ago from [date-fns](https://date-fns.org/)
 
 
 **Thank you!** :tada:
