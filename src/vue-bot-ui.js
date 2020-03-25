@@ -1,4 +1,4 @@
-import VueBotUI from '@/components/BotUI.vue'
+import VueBotUI from './components/BotUI.vue'
 
 const Plugin = {
   install (Vue, options) {

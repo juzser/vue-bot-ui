@@ -9,14 +9,15 @@
     :messages="messageData",
     :bot-typing="botTyping",
     :input-disable="inputDisable",
+    :is-open="false",
     @init="botStart",
     @msg-send="msgSend",
   )
 </template>
 <script>
-import BotIcon from '@/assets/icons/bot.png'
+import BotIcon from './assets/icons/bot.png'
 import { VueBotUI } from './vue-bot-ui'
-import { messageService } from '@/helpers/message'
+import { messageService } from './helpers/message'
 
 export default {
   components: {

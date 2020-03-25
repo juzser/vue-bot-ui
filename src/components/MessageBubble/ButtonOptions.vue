@@ -20,7 +20,7 @@
         span {{ item.text }}
 </template>
 <script>
-import EventBus from '@/helpers/event-bus'
+import EventBus from '../../helpers/event-bus'
 
 export default {
   props: {

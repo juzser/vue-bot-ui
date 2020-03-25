@@ -37,13 +37,13 @@
     .qkb-msg-avatar__img(v-if="optionsMain.botAvatarImg")
 </template>
 <script>
-import EventBus from '@/helpers/event-bus'
+import EventBus from '../helpers/event-bus'
 import BoardHeader from './Board/Header'
 import BoardContent from './Board/Content'
 import BoardAction from './Board/Action'
 import AppStyle from './AppStyle'
-import BubbleIcon from '@/assets/icons/bubble.svg'
-import CloseIcon from '@/assets/icons/close.svg'
+import BubbleIcon from '../assets/icons/bubble.svg'
+import CloseIcon from '../assets/icons/close.svg'
 
 export default {
   name: 'VueBotUI',
@@ -73,6 +73,11 @@ export default {
     },
 
     inputDisable: {
+      type: Boolean,
+      default: false
+    },
+
+    isOpen: {
       type: Boolean,
       default: false
     }
@@ -119,6 +124,10 @@ export default {
   },
 
   created () {
+    if (this.isOpen) {
+      this.botToggle()
+    }
+
     EventBus.$on('select-button-option', this.selectOption)
   },
 

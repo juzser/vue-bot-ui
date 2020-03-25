@@ -23,7 +23,7 @@
           IconSend.qkb-action-icon.qkb-action-icon--send
 </template>
 <script>
-import IconSend from '@/assets/icons/send.svg'
+import IconSend from '../../assets/icons/send.svg'
 
 export default {
   components: {

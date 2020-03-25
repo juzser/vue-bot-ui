@@ -67,6 +67,7 @@ List of available props to use in the component:
 | `options`          | Object     | see below       | Some options to customize UI |
 | `bot-typing`        | Boolean    | false           | If `true`, the bot typing indicator will show  |
 | `input-disable`     | Boolean    | false           | If `true`, message input will be disabled |
+| `is-open`     | Boolean    | false           | If `true`, the board will open from init |
 
 
 
