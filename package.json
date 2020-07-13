@@ -44,7 +44,7 @@
     "pug-plain-loader": "^1.0.0",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.2",
-    "standard-version": "^7.0.1",
+    "standard-version": "^8.0.1",
     "vue": "^2.6.10",
     "vue-loader": "^15.8.3",
     "vue-svg-loader": "^0.15.0",
