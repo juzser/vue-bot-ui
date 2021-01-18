@@ -80,6 +80,10 @@ export default {
     isOpen: {
       type: Boolean,
       default: false
+    },
+
+    openDelay: {
+      type: Number
     }
   },
 
@@ -125,7 +129,11 @@ export default {
 
   created () {
     if (this.isOpen) {
-      this.botToggle()
+      if (this.openDelay) {
+        setTimeout(this.botOpen, this.openDelay)
+      } else {
+        this.botToggle()
+      }
     }
 
     EventBus.$on('select-button-option', this.selectOption)
@@ -136,6 +144,12 @@ export default {
   },
 
   methods: {
+    botOpen () {
+      if (!this.botActive) {
+        this.botToggle()
+      }
+    },
+
     botToggle () {
       this.botActive = !this.botActive
 

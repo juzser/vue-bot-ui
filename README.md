@@ -68,7 +68,7 @@ List of available props to use in the component:
 | `bot-typing`        | Boolean    | false           | If `true`, the bot typing indicator will show  |
 | `input-disable`     | Boolean    | false           | If `true`, message input will be disabled |
 | `is-open`     | Boolean    | false           | If `true`, the board will open from init |
-
+| `open-delay`     | Number    | undefined           | Delay before opening from init (in ms). Requires `is-open` to be `true` |
 
 
 ## Options
