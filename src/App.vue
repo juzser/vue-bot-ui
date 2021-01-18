@@ -9,8 +9,7 @@
     :messages="messageData",
     :bot-typing="botTyping",
     :input-disable="inputDisable",
-    :is-open="true",
-    :open-delay="2000"
+    :is-open="false",
     @init="botStart",
     @msg-send="msgSend",
   )
