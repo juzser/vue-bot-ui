@@ -154,6 +154,7 @@ export default {
       this.botActive = !this.botActive
 
       if (this.botActive) {
+        EventBus.$on('select-button-option', this.selectOption)
         this.$emit('init')
       } else {
         EventBus.$off('select-button-option')
