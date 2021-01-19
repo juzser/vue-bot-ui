@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.7](https://github.com/JuzSer/vue-bot-ui/compare/v0.2.5-next.0...v0.2.7) (2021-01-19)
+
+
+### Bug Fixes
+
+* select option not available after close the board ([2fa4f01](https://github.com/JuzSer/vue-bot-ui/commit/2fa4f0133f8f9034ed85d3b7645af325a5d177cf))
+
 ### [0.2.5](https://github.com/JuzSer/vue-bot-ui/compare/v0.2.5-next.0...v0.2.5) (2021-01-19)
 
 
