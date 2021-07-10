@@ -1,6 +1,6 @@
 <template lang="pug">
 .qkb-msg-bubble-component.qkb-msg-bubble-component--single-text
-  .qkb-msg-bubble-component__text {{ mainData.text }}
+  .qkb-msg-bubble-component__text(v-html="mainData.text")
 </template>
 <script>
 export default {
