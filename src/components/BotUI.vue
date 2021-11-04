@@ -142,6 +142,12 @@ export default {
     document.addEventListener(Config.EVENT_OPEN, function () {
       this.botOpen()
     })
+    document.addEventListener(Config.EVENT_CLOSE, function () {
+      this.botClose()
+    })
+    document.addEventListener(Config.EVENT_TOGGLE, function () {
+      this.botToggle()
+    })
   },
 
   beforeDestroy () {
@@ -151,6 +157,12 @@ export default {
   methods: {
     botOpen () {
       if (!this.botActive) {
+        this.botToggle()
+      }
+    },
+
+    botClose () {
+      if (this.botActive) {
         this.botToggle()
       }
     },
