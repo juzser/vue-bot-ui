@@ -38,6 +38,7 @@
 </template>
 <script>
 import EventBus from '../helpers/event-bus'
+import Config from '../config'
 import BoardHeader from './Board/Header'
 import BoardContent from './Board/Content'
 import BoardAction from './Board/Action'
@@ -135,6 +136,12 @@ export default {
         this.botToggle()
       }
     }
+  },
+
+  mounted () {
+    document.addEventListener(Config.EVENT_OPEN, function () {
+      this.botOpen()
+    })
   },
 
   beforeDestroy () {
