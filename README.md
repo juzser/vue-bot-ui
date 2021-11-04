@@ -108,6 +108,16 @@ Take a look my `App.vue` file if you need an example.
 
 Use `msg-send` to get the message from user and trigger request to bot API.
 
+**Trigger Events:**
+
+| Name            |  Description |
+| ---             |  ---         |
+| `botui-open`    |  To open the board |
+| `botui-close`   |  To close the board |
+| `botui-toggle`  |  To toggle open/close the board |
+
+---
+
 ### Components
 
 **Common pattern / Example data:**
