@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { Trigger } from './components';
+
 </script>
 
 <template>
 <div class="page-container">
+  <Trigger
+  ></Trigger>
 </div>
 </template>
 

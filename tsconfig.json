@@ -15,6 +15,9 @@
     "paths": {
       "@/*": ["./src/*"],
     },
+    "types": [
+      "vitest/globals"
+    ]
   },
   "vueCompilerOptions": {
     "plugins": [

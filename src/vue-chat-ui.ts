@@ -1,7 +1,7 @@
 import type { App } from 'vue';
 import * as components from './components';
 
-const VueLibScaffold = {
+const VueChatUi = {
   install(Vue: App) {
     for (const component in components) {
       const componentElement = components[component as keyof typeof components];
@@ -11,7 +11,7 @@ const VueLibScaffold = {
 };
 
 // Export all
-export default VueLibScaffold;
+export default VueChatUi;
 
 // Export single component
 export * from './components';
