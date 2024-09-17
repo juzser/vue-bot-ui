@@ -8,16 +8,24 @@
         :bot-title="optionsMain.botTitle",
         @close-bot="botToggle"
       )
+        template(v-slot:header)
+          slot(name="header")
       BoardContent(
         :bot-typing="botTyping",
         :main-data="messages"
       )
+        template(v-slot:botTyping)
+          slot(name="botTyping")
       BoardAction(
         :input-disable="inputDisable",
         :input-placeholder="optionsMain.inputPlaceholder",
         :input-disable-placeholder="optionsMain.inputDisablePlaceholder",
         @msg-send="sendMessage"
       )
+        template(v-slot:actions)
+          slot(name="actions")
+        template(v-slot:sendButton)
+          slot(name="sendButton")
   .qkb-bot-bubble
     button.qkb-bubble-btn(
       @click="botToggle"
