@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { Trigger } from './components';
+
+const showPopover = ref(false);
 
 </script>
 
 <template>
 <div class="page-container">
-  <Trigger
-  ></Trigger>
+  <Trigger v-model="showPopover">
+    Hello
+  </Trigger>
 </div>
 </template>
 

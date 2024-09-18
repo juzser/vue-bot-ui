@@ -1,10 +1,2 @@
-@import 'variables';
-
-// Common layout
-@import 'base';
-
-// Components
-@import 'components/Board';
-@import 'components/Trigger';
-
-// Animations
+@import 'common/variables';
+@import 'common/base';

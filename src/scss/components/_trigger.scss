@@ -1,0 +1,36 @@
+:root {
+  --vcu-trigger-background-color: var(--vcu-color-primary);
+  --vcu-trigger-border: 1.5px solid var(--vcu-color-primary);
+  --vcu-trigger-border-radius: 50%;
+  --vcu-trigger-button-size: 4rem;
+  --vcu-trigger-button-gap: .5rem;
+  --vcu-trigger-pos-x: var(--vcu-pos-x);
+  --vcu-trigger-pos-y: var(--vcu-pos-y);
+}
+
+.vcu-trigger {
+  display: flex;
+  position: absolute;
+  right: var(--vcu-trigger-pos-x);
+  bottom: var(--vcu-trigger-pos-y);
+}
+
+.vcu-trigger__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--vcu-trigger-button-size);
+  height: var(--vcu-trigger-button-size);
+}
+
+button.vcu-trigger__button {
+  width: 100%;
+  height: 100%;
+  padding: var(--vcu-trigger-button-gap);
+  margin: 0;
+  background-color: var(--vcu-trigger-background-color);
+  border: var(--vcu-trigger-border);
+  border-radius: var(--vcu-trigger-border-radius);
+  box-shadow: none;
+  outline: none;
+}
