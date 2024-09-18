@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/JuzSer/vue-bot-ui/compare/v0.2.10-next.0...v0.2.10) (2024-09-18)
+
 ### [0.2.10-next.0](https://github.com/JuzSer/vue-bot-ui/compare/v0.2.8...v0.2.10-next.0) (2024-09-18)
 
 ### [0.2.8](https://github.com/JuzSer/vue-bot-ui/compare/v0.2.7...v0.2.8) (2021-11-04)
